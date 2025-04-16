@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1><i class="fas fa-wallet"></i> Controle Financeiro</h1>
+            <div class="total-card">
+                <span>Total de Gastos</span>
+                <h2 id="totalExpenses">R$ 0,00</h2>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <div class="form-container card">
+                <h2><i class="fas fa-plus-circle"></i> Novo Gasto</h2>
+                <form id="expenseForm">
+                    <div class="form-group">
+                        <label for="description">
+                            <i class="fas fa-file-alt"></i> Descrição:
+                        </label>
+                        <input type="text" id="description" required 
+                               placeholder="Ex: Compras do mercado">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="amount">
+                                <i class="fas fa-dollar-sign"></i> Valor:
+                            </label>
+                            <input type="number" id="amount" step="0.01" required 
+                                   placeholder="0,00">
+                        </div>
+                        <div class="form-group">
+                            <label for="category">
+                                <i class="fas fa-tag"></i> Categoria:
+                            </label>
+                            <select id="category" required>
+                                <option value="">Selecione...</option>
+                                <option value="Alimentação">Alimentação</option>
+                                <option value="Transporte">Transporte</option>
+                                <option value="Moradia">Moradia</option>
+                                <option value="Lazer">Lazer</option>
+                                <option value="Saúde">Saúde</option>
+                                <option value="Educação">Educação</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </form>
+            </div>
+
+            <div class="expenses-container card">
+                <h2><i class="fas fa-list"></i> Gastos Recentes</h2>
+                <div class="expenses-filters">
+                    <input type="text" id="searchExpense" placeholder="Buscar gastos...">
+                    <select id="filterCategory">
+                        <option value="">Todas as categorias</option>
+                        <option value="Alimentação">Alimentação</option>
+                        <option value="Transporte">Transporte</option>
+                        <option value="Moradia">Moradia</option>
+                        <option value="Lazer">Lazer</option>
+                        <option value="Saúde">Saúde</option>
+                        <option value="Educação">Educação</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                <div id="expensesList" class="expenses-list"></div>
+            </div>
+        </main>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+</html> 
